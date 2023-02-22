@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bilibili 展示评论IP属地与显示被隐藏评论
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  新版b站页面展示ip属地与被隐藏评论
 // @author       https://github.com/QingXia-Ela
 // @match        https://www.bilibili.com/video/*
@@ -23,10 +23,12 @@
       const rTime = e.querySelector(s1)?.querySelector(s2)
       if (rTime?.getAttribute('data-is-modify') == 'true') return
 
-      const ipl = document.createElement('span')
-      ipl.style.color = "#58b1d4"
-      ipl.innerHTML = ` ${replyProps.reply_control.location}`
-      rTime?.appendChild(ipl)
+      if (replyProps.reply_control.location) {
+        const ipl = document.createElement('span')
+        ipl.style.color = "#58b1d4"
+        ipl.innerHTML = ` ${replyProps.reply_control.location}`
+        rTime?.appendChild(ipl)
+      }
 
       if (replyProps.$isInvisible) {
         const invisibleMark = document.createElement('span')
