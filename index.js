@@ -73,9 +73,10 @@
     modifyDom(ReplyItemDom)
   }
 
-  window.addEventListener('load', () => {
+  let hasCommentClass = false
+  function init() {
     const targetNode = document.getElementById("comment")
-    let hasCommentClass = false
+    if (!targetNode) return
     const observer = new MutationObserver((ml) => {
       if (hasCommentClass || targetNode.querySelector('.comment')) {
         hasCommentClass = true
@@ -87,5 +88,10 @@
       childList: true,
       subtree: true
     })
-  })
+  }
+
+  const timer = setInterval(() => {
+    if (!hasCommentClass) init()
+    else clearInterval(timer)
+  }, 1000);
 })();
