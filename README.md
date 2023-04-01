@@ -2,10 +2,20 @@
 
 基于油猴实现的新版b站评论区显示IP归属地与展示被隐藏评论
 
+目前只适用于新版视频页面，动态评论显示和旧版视频评论区请移步使用其他脚本
+
+评论被隐藏的原因是评论发送者被 UP 拉黑了
+
+[Github仓库链接](https://github.com/QingXia-Ela/unlock-bilibili-PcBrowser-comment)
+
+脚本不生效的话试试在页面中 Ctrl+F5 不使用缓存，一般就会有效果了
+
+如果还是没有效果请前往 issue 提出问题，并附带上问题描述截图：https://github.com/QingXia-Ela/unlock-bilibili-PcBrowser-comment/issues
+
 ## 食用方法
 
-1. Greasy fork 直接安装：https://greasyfork.org/zh-CN/scripts/460488-bilibili-%E5%B1%95%E7%A4%BA%E8%AF%84%E8%AE%BAip%E5%B1%9E%E5%9C%B0%E4%B8%8E%E6%98%BE%E7%A4%BA%E8%A2%AB%E9%9A%90%E8%97%8F%E8%AF%84%E8%AE%BA
-2. 下载本仓库的 index.js，在油猴管理页面新建一个脚本，并将下载的js文件里面的内容复制一份到新建的脚本中
+1. Greasy fork
+2. 下载[仓库](https://github.com/QingXia-Ela/unlock-bilibili-PcBrowser-comment)的 index.js，在油猴管理页面新建一个脚本，并将下载的js文件里面的内容复制一份到新建的脚本中
 
 ## 实现原理
 
