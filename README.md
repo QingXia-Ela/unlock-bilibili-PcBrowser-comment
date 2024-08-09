@@ -1,10 +1,14 @@
-# unlock-bilibili-PcBrowser-comment
+# ~~unlock-bilibili-PcBrowser-comment~~
+
+# 脚本已弃用，b站将改用 lit 做评论区，推荐改用更稳定的脚本
 
 基于油猴实现的新版b站评论区显示IP归属地与展示被隐藏评论
 
 目前只适用于新版视频页面，动态评论显示和旧版视频评论区请移步使用其他脚本
 
 评论被隐藏的原因是评论发送者被 UP 拉黑了
+
+目前b站已移除主楼评论隐藏属性，楼中楼的隐藏暂未被移除
 
 [Github仓库链接](https://github.com/QingXia-Ela/unlock-bilibili-PcBrowser-comment)
 
@@ -20,7 +24,7 @@
 ## 实现原理
 
 1. 通过 DOM 获取评论区 __vue_app__ 实例，并通过 provides 获取全局注入的 store，将 store 内部数据进行修改
-2. 获取所有评论的 DOM 实例，通过 __vnode 属性获取 props，再根据 props 传入内容进行 DOM 处理以添加 IP 属地展示和隐藏评论提示
+2. 通过 app.mixin 直接获取 vnode 并对真实 dom 进行修改
 
 ## 效果
 
